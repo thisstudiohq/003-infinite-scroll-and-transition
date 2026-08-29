@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/shared/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/scss/index.scss" />
+    <meta name="author" content="Ibrahim Raimi" />
+    <script>
+      document.documentElement.className = "js";
+    </script>
+    <title>Infinite Scroll Gallery with Page Transitions</title>
+  </head>
+  <body class="loading">
+    <nav class="nav" aria-label="Site navigation">
+      <div class="nav__group">
+        <div class="nav__name" nav-anim>
+          Ibrahim <br />
+          Raimi
+        </div>
+
+        <div class="nav__desc" nav-anim>
+          Infinite Scroll Gallery with Page Transitions
+          <br />
+          <a href="" class="link link--metis"> GitHub </a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="gallery">
+        <div class="gallery">
+          <figure
+            class="gallery__slide"
+            style="--stagger: -24vw; --img-w: 20vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/1.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Composed Stillness</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 14vw; --img-w: 10vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/2.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Suspended Motion</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -18vw; --img-w: 23vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/3.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Refined Perspective</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 22vw; --img-w: 18vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/4.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Monochrome Presence</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -26vw; --img-w: 25vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/5.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Textured Silhouette</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 28vw; --img-w: 28vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/6.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Protected Gaze</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -20vw; --img-w: 16vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/7.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Geometric Symmetry</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 8vw; --img-w: 30vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/8.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Fluid Dynamics</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -12vw; --img-w: 15vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/9.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Soft Narratives</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 15vw; --img-w: 23vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/10.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Sculptural Forms</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -24vw; --img-w: 24vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/11.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Sharp Lines</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 26vw; --img-w: 16vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/12.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Clear Vision</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -16vw; --img-w: 34vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/13.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Ethereal Containment</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 24vw; --img-w: 13vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/14.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Layered Elegance</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -28vw; --img-w: 19vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/15.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Abstract Concealment</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 18vw; --img-w: 22vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/16.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Textural Exploration</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -10vw; --img-w: 27vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/17.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Solitary Confidence</figcaption>
+          </figure>
+          <figure class="gallery__slide" style="--stagger: 20vw; --img-w: 18vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/18.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Woven Identity</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -22vw; --img-w: 19vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/19.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Colorfield Moment</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 16vw; --img-w: 30vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/20.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Introspective Warmth</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -18vw; --img-w: 17vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/21.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Anchored Gaze</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 24vw; --img-w: 12vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/22.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Poised Minimalism</figcaption>
+          </figure>
+
+          <figure
+            class="gallery__slide"
+            style="--stagger: -26vw; --img-w: 23vw"
+          >
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/23.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Captured Energy</figcaption>
+          </figure>
+
+          <figure class="gallery__slide" style="--stagger: 12vw; --img-w: 26vw">
+            <div class="gallery__img-wrapper">
+              <img
+                class="gallery__img"
+                src="./shared/images/24.webp"
+                alt="Some image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>Graceful Release</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-wrapper">
+          <figure class="content__preview-img">
+            <img alt="" />
+          </figure>
+          <div class="content__group-list">
+            <button class="content__back" type="button">
+              &larr; back [ESC]
+            </button>
+            <div class="content__group" data-index="0">
+              <div class="content__title">Composed Stillness</div>
+              <div class="content__description">
+                In stillness, presence emerges. A figure at rest embodies quiet
+                confidence, draped in tailored lines that speak of intention and
+                control. The monochromatic palette allows form and posture to
+                become the primary language.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="1">
+              <div class="content__title">Suspended Motion</div>
+              <div class="content__description">
+                Movement becomes art when captured at the perfect instant.
+                Fabrics suspended in air, limbs extended, the body engaged in
+                dynamic gesture—a celebration of physicality and the freedom of
+                motion.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="2">
+              <div class="content__title">Refined Perspective</div>
+              <div class="content__description">
+                Viewed from the side, identity shifts. A profile suggests
+                contemplation and introspection. Cream tones and clean lines
+                create a study in restraint, where what remains unspoken becomes
+                most powerful.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="3">
+              <div class="content__title">Monochrome Presence</div>
+              <div class="content__description">
+                Neutral palettes amplify presence. A figure crouched in cream
+                and bone tones becomes a study in proportion and negative space.
+                Sunglasses introduce a protective edge, a moment of opacity
+                within visibility.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="4">
+              <div class="content__title">Textured Silhouette</div>
+              <div class="content__description">
+                Texture speaks as loudly as color. A woven coat catches light at
+                unexpected angles, creating depth and dimension. Platform shoes
+                anchor the figure, adding architectural interest to the
+                silhouette.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="5">
+              <div class="content__title">Protected Gaze</div>
+              <div class="content__description">
+                Dark sunglasses create a barrier between viewer and subject. Yet
+                the body remains exposed and vulnerable. This tension—between
+                concealment and exposure—defines contemporary identity and the
+                right to privacy within public spaces.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="6">
+              <div class="content__title">Geometric Symmetry</div>
+              <div class="content__description">
+                Symmetry creates order. A frontal gaze, perfectly centered, with
+                features that align and balance. Yet the freckles disrupt this
+                perfection, adding humanity and imperfection to mathematical
+                precision.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="7">
+              <div class="content__title">Fluid Dynamics</div>
+              <div class="content__description">
+                Fabric in motion tells its own story. Silk and linen unfold
+                across the frame, creating curves and valleys. The body becomes
+                a vessel for cloth, both moving together in a dance of material
+                and form.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="8">
+              <div class="content__title">Soft Narratives</div>
+              <div class="content__description">
+                A delicate collar frames the neck like a sculpture. Neutral
+                tones and soft textures create an intimate portrait. The gaze
+                downward suggests introspection, a moment turned inward.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="9">
+              <div class="content__title">Sculptural Forms</div>
+              <div class="content__description">
+                Structured silhouettes echo architectural language. Broad
+                shoulders, defined waist, the body itself becomes a form to be
+                studied. Every seam and curve is deliberate.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="10">
+              <div class="content__title">Sharp Lines</div>
+              <div class="content__description">
+                High fashion meets geometric abstraction. Clean lines, bold
+                geometry, and a neutral palette create a portrait that could be
+                a technical drawing. Precision becomes beauty.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="11">
+              <div class="content__title">Clear Vision</div>
+              <div class="content__description">
+                Sunglasses become a statement—a refusal to be fully known, a
+                declaration of autonomy. The wearer controls what they reveal
+                and conceal, commanding their own narrative.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="12">
+              <div class="content__title">Ethereal Containment</div>
+              <div class="content__description">
+                A transparent dome encircles the head, creating a floating
+                sphere of clarity. The image plays with illusion and reality,
+                the visible and the protected. It's both vulnerable and
+                impenetrable.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="13">
+              <div class="content__title">Layered Elegance</div>
+              <div class="content__description">
+                Layers add complexity to simplicity. A camel coat, cream shirt,
+                pearl necklace—each element carefully considered and placed. The
+                composition speaks of thoughtful curation and refined taste.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="14">
+              <div class="content__title">Abstract Concealment</div>
+              <div class="content__description">
+                What hides the face reveals the person. An abstract material
+                obscures features, yet the body's presence is undeniable.
+                Identity becomes about form rather than facial recognition.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="15">
+              <div class="content__title">Textural Exploration</div>
+              <div class="content__description">
+                Texture becomes the subject. A ribbed fabric catches and
+                reflects light, creating visual rhythm across the surface. Touch
+                becomes visible, and the tactile becomes photographic.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="16">
+              <div class="content__title">Solitary Confidence</div>
+              <div class="content__description">
+                Standing alone against a neutral background, the figure requires
+                no props or context. Self-assurance radiates from posture and
+                gaze. The subject commands the frame entirely through presence.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="17">
+              <div class="content__title">Woven Identity</div>
+              <div class="content__description">
+                Hair becomes sculpture, braids becoming architectural elements.
+                Jewelry adds accent notes. The figure is composed with the same
+                care as a still life, every element purposeful.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="18">
+              <div class="content__title">Colorfield Moment</div>
+              <div class="content__description">
+                Warm earth tones create a contemplative space. A figure in
+                profile against a desert landscape, quiet and observant. The
+                image speaks of solitude, passage, and connection to place.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="19">
+              <div class="content__title">Introspective Warmth</div>
+              <div class="content__description">
+                Close and intimate, the camera draws near. Eyes downcast, face
+                in golden light. This is vulnerability rendered beautiful—a
+                moment of inner contemplation made visible.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="20">
+              <div class="content__title">Anchored Gaze</div>
+              <div class="content__description">
+                The downward gaze creates contemplation. Pearl earrings echo the
+                simplicity of line drawing. Profile against profile, the
+                composition becomes study in refinement and quiet beauty.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="21">
+              <div class="content__title">Poised Minimalism</div>
+              <div class="content__description">
+                Less is more. A single line, a geometric form, neutral tones.
+                The aesthetic philosophy of contemporary design meets
+                portraiture. Purity becomes power.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="22">
+              <div class="content__title">Captured Energy</div>
+              <div class="content__description">
+                Energy kinetic and contained. Limbs extended, fabric catching
+                motion mid-air. This is joy and freedom made visible—the
+                celebration of the body in dynamic space.
+              </div>
+            </div>
+
+            <div class="content__group" data-index="23">
+              <div class="content__title">Graceful Release</div>
+              <div class="content__description">
+                Skirts spinning, body in motion. Cream and gold tones suggest
+                elegance and celebration. The photographer captures the moment
+                where control gives way to pure movement and joy.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/js/index.js"></script>
+  </body>
+</html>

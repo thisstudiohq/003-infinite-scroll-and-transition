@@ -1,0 +1,330 @@
+@use "../utils/" as *;
+@use "sass:list";
+
+@font-face {
+  font-family: "Ppeiko Thin";
+  src: $font-ppeiko-source;
+}
+
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+body {
+  height: 100%;
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  color: $black;
+  font-feature-settings: "case" on;
+}
+
+@media (scripting: enabled) {
+  .loading {
+    &::before,
+    &::after {
+      content: "";
+      position: fixed;
+      z-index: 10000;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-bg;
+    }
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 1px;
+      margin: 0 0 0 -50px;
+      background: $color-link;
+      animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
+    }
+  }
+}
+
+@keyframes loaderAnim {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+
+  50% {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12vh;
+  width: 100%;
+  padding-top: 14vh;
+
+  &__slide {
+    flex-shrink: 0;
+    transform: translateX(var(--stagger, 0vw));
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+
+    $slides: (
+      1: (-24vw, 290px),
+      2: (14vw, 330px),
+      3: (-18vw, 270px),
+      4: (22vw, 450px),
+      5: (-26vw, 300px),
+      6: (28vw, 150px),
+      7: (-20vw, 230px),
+      8: (8vw, 460px),
+      9: (-12vw, 270px),
+      10: (15vw, 250px),
+      11: (-24vw, 390px),
+      12: (26vw, 160px),
+      13: (-16vw, 210px),
+      14: (24vw, 280px),
+      15: (-28vw, 175px),
+      16: (18vw, 240px),
+      17: (-10vw, 310px)
+    );
+
+    @each $i, $vals in $slides {
+      &:nth-child(#{$i}) {
+        --stagger: #{list.nth($vals, 1)};
+        --img-w: #{list.nth($vals, 2)};
+      }
+    }
+
+    figcaption {
+      display: block;
+      margin-top: 0.5rem;
+      color: $color-desc;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    margin: 0;
+    width: var(--img-w, 200px);
+    height: auto;
+    aspect-ratio: 0.8;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.content {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &__preview-img {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    aspect-ratio: 0.8;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2);
+    }
+  }
+
+  &__group-list {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-inline: calc(80vh + 1.5vw) $page-padding;
+    padding-block: $page-padding;
+  }
+
+  @include media("<=tablet") {
+    &__preview-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 50%;
+      aspect-ratio: auto;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: none;
+      }
+    }
+
+    &__group-list {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+      min-height: 100vh;
+      margin-top: 0;
+      overflow-y: auto;
+      padding-inline: $page-padding;
+      padding-block: $page-padding;
+    }
+  }
+
+  @include media("<=phone") {
+    &__preview-img {
+      position: static;
+      height: 40vh;
+      width: 100%;
+      max-height: none;
+      margin-bottom: 0;
+
+      img {
+        object-fit: contain;
+        transform: none;
+      }
+    }
+
+    &__group-list {
+      position: static;
+      margin-top: 0;
+      min-height: auto;
+      width: 100%;
+      height: auto;
+      padding-inline: 1.5rem;
+      padding-block: 1.5rem;
+      overflow-y: visible;
+    }
+  }
+
+  &__back {
+    font-weight: inherit;
+    font-size: inherit;
+    align-self: flex-start;
+    border: none;
+    background: none;
+    color: #111;
+    cursor: pointer;
+    padding: 0;
+    line-height: inherit;
+    margin-bottom: 1.5rem;
+    transition: font-size 0.3s ease;
+
+    @include media("<=phone") {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__group {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__title {
+    justify-self: end;
+    font-family: $font-ppeiko;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 10vw, 6rem);
+    line-height: 1;
+    margin-bottom: 3rem;
+    margin-top: 40vh;
+    color: #141414;
+    transition: font-size 0.3s ease, margin 0.3s ease;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__description {
+    justify-self: end;
+    margin-right: 10vw;
+    max-width: 50ch;
+    font-size: clamp(1rem, 2.5vw, 14px);
+    transition: font-size 0.3s ease, max-width 0.3s ease, margin 0.3s ease;
+  }
+
+  @include media("<=tablet") {
+    &__title {
+      font-size: clamp(1.75rem, 8vw, 3.5rem);
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    &__description {
+      margin-right: 0;
+      max-width: 100%;
+      width: 100%;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+  }
+
+  @include media("<=phone") {
+    &__title {
+      font-size: clamp(1.5rem, 7vw, 2.5rem);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    &__description {
+      max-width: 100%;
+      width: 100%;
+      font-size: clamp(0.875rem, 3vw, 0.95rem);
+    }
+  }
+}

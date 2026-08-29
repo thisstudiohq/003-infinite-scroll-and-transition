@@ -1,0 +1,9 @@
+@use "../utils/" as *;
+
+@font-face {
+  font-family: $font-primary;
+  src: $font-source;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

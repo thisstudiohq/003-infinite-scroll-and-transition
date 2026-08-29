@@ -1,0 +1,21 @@
+@mixin media($query) {
+  @if $query == "<=phone" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $query == "<=tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $query == ">phone" {
+    @media (min-width: 769px) {
+      @content;
+    }
+  } @else if $query == ">tablet" {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else {
+    @error "Unsupported media query: #{$query}";
+  }
+}
