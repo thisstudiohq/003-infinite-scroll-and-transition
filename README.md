@@ -2,7 +2,7 @@
 
 Infinite GSAP gallery with parallax scrolling, reveal animations, and Flip-powered fullscreen transitions.
 
-[Demo](https://infinite-scroll-and-transition.netlify.app)
+[Demo](https://003-infinite-scroll-and-transition.netlify.app/)
 
 ### Installation
 
